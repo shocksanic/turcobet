@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Turco BET</title>
+</head>
+<body style="background-color: #61af78;">
+    <hr>
+    <h1><center>Turco BET</center></h1>
+    <hr>
+    <h2>Jogo dos Dados</h2>
+    <img src="https://eleganceplussize.com.br/images/craps-casino-apostas.jpg" alt="Imagemdosdados" width="360" height="217">
+    <p><b>Como funciona o jogo?</b></p>
+    <button id="mostrarExplicacao">Clique para saber mais</button>
+    <ul>
+        <li id="explicacao" style="display: none;">
+            • Se a soma dos valores dos dois dados for 7 ou 11 no primeiro lançamento, você ganha imediatamente.<br>
+            • Se a soma dos valores dos dois dados for 2, 3 ou 12 no primeiro lançamento, você perde imediatamente.<br>
+            • Se a soma for qualquer outro número (4, 5, 6, 8, 9 ou 10) no primeiro lançamento, essa soma se torna o "ponto".<br>
+            • Nas jogadas seguintes, você continua lançando os dados até obter novamente o "ponto" ou um total de 7.<br>
+            • Se você obtiver o "ponto" novamente antes de rolar um 7, você ganha.<br>
+            • Se você rolar um 7 antes de obter o "ponto" novamente, você perde.
+        </li>
+    </ul>
+    <p><b>Clique no botão para lançar os dados:</b></p>
+    <button id="jogarDados">Jogar Dados</button>
+    <p id="resultado"></p>
+    <p><b>Formas de Pagamento:</b></p>
+    <img src="https://oqvestir.s3.us-west-2.amazonaws.com/newsletter/header/payment-mobile.png" alt="Forma de Pagamento"> 
+
+    <p><b>Patrocinador Oficial:</b></p>
+    <img src="https://images.alphacoders.com/132/1327049.jpeg" alt="Neymar" width="360" height="217"> 
+    <img src="https://i0.wp.com/www.anoticiaalagoas.com.br/wp-content/uploads/2023/07/naom_5c6559fc94063.jpg" alt="Galvão" width="360" height="217"> 
+
+    <script>
+        // Função para mostrar a explicação
+        document.getElementById("mostrarExplicacao").addEventListener("click", function() {
+            document.getElementById("explicacao").style.display = "block";
+        });
+
+        document.getElementById("jogarDados").addEventListener("click", function() {
+            // Simular o lançamento dos dados (números aleatórios de 1 a 6)
+            var dado1 = Math.floor(Math.random() * 6) + 1;
+            var dado2 = Math.floor(Math.random() * 6) + 1;
+
+            // Calcular a soma dos valores dos dados
+            var soma = dado1 + dado2;
+
+            // Exibir o resultado
+            var resultadoTexto = "Dado 1: " + dado1 + "<br>Dado 2: " + dado2 + "<br>Soma: " + soma;
+            document.getElementById("resultado").innerHTML = resultadoTexto;
+
+            // Verificar se o jogador ganhou ou perdeu
+            if (soma === 7 || soma === 11) {
+                document.getElementById("resultado").innerHTML += "<br>Você ganhou!";
+            } else if (soma === 2 || soma === 3 || soma === 12) {
+                document.getElementById("resultado").innerHTML += "<br>Você perdeu!";
+            } else {
+                document.getElementById("resultado").innerHTML += "<br>Você continua jogando. Tente obter a mesma soma novamente ou 7 para ganhar.";
+            }
+        });
+    </script>
+</body>
+</html>
